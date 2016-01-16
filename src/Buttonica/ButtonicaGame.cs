@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Buttonica.Core.Framework;
+using Buttonica.Core.Framework.Core;
 using Buttonica.Core.Framework.Modules;
 using Buttonica.Core.Framework.Scenes;
 using Microsoft.Xna.Framework;
-using IUpdateable = Buttonica.Core.Framework.IUpdateable;
+using IUpdateable = Buttonica.Core.Framework.Core.IUpdateable;
 
 namespace Buttonica
 {

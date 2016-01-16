@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 
-namespace Buttonica.Core.Framework
+namespace Buttonica.Core.Framework.Core
 {
 	/// <summary>
 	///		Represents a type which supports render calls

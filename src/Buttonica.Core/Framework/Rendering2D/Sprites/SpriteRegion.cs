@@ -12,7 +12,7 @@ namespace Buttonica.Core.Framework.Rendering2D.Sprites
 	/// <summary>
 	///		Represents an individual region of a <see cref="SpriteSheet"/>
 	/// </summary>
-	public class TextureRegion2D
+	public class SpriteRegion
 	{
 
 		/// <summary>
@@ -46,28 +46,28 @@ namespace Buttonica.Core.Framework.Rendering2D.Sprites
 		public int Y => Bounds.Y;
 
 		/// <summary>
-		///		Creates a new <see cref="TextureRegion2D"/> using the specified <see cref="Texture2D"/> and dimensions
+		///		Creates a new <see cref="SpriteRegion"/> using the specified <see cref="Texture2D"/> and dimensions
 		/// </summary>
-		public TextureRegion2D(Texture2D texture, int x, int y, int width, int height)
+		public SpriteRegion(Texture2D texture, int x, int y, int width, int height)
 			: this(texture, new Rectangle(x, y, width, height))
 		{
 			
 		}
 
 		/// <summary>
-		///		Creates a new <see cref="TextureRegion2D"/> using the specified <see cref="Texture2D"/> and 
+		///		Creates a new <see cref="SpriteRegion"/> using the specified <see cref="Texture2D"/> and 
 		///		<see cref="Rectangle">bounds</see>
 		/// </summary>
-		public TextureRegion2D(Texture2D texture, Rectangle bounds)
+		public SpriteRegion(Texture2D texture, Rectangle bounds)
 		{
 			Bounds	= bounds;
 			Texture = texture;
 		}
 
 		/// <summary>
-		///		Creates a new <see cref="TextureRegion2D"/> using the specified <see cref="Texture2D"/>
+		///		Creates a new <see cref="SpriteRegion"/> using the specified <see cref="Texture2D"/>
 		/// </summary>
-		public TextureRegion2D(Texture2D texture)
+		public SpriteRegion(Texture2D texture)
 			: this(texture, 0, 0, texture.Width, texture.Height)
 		{
 			
