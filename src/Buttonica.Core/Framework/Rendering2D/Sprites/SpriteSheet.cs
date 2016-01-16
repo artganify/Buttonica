@@ -13,15 +13,15 @@ namespace Buttonica.Core.Framework.Rendering2D.Sprites
 	/// <summary>
 	///		Represents a sprite texture splitted into regions (texture atlas)
 	/// </summary>
-	public class SpriteSheet : IEnumerable<SpriteRegion>
+	public class SpriteSheet : IEnumerable<Sprite>
 	{
 
-		private readonly List<SpriteRegion> _regions = new List<SpriteRegion>();
+		private readonly List<Sprite> _sprites = new List<Sprite>();
 
 		/// <summary>
-		///		Returns the <see cref="SpriteRegion"/> at the specified index
+		///		Returns the <see cref="Sprite"/> at the specified index
 		/// </summary>
-		public SpriteRegion this[int index] => GetRegionByIndex(index);
+		public Sprite this[int index] => GetSpriteByIndex(index);
 
 		/// <summary>
 		///		Returns the <see cref="Texture2D"/> of the current <see cref="SpriteSheet"/>
@@ -37,27 +37,28 @@ namespace Buttonica.Core.Framework.Rendering2D.Sprites
 		}
 
 		/// <summary>
-		///		Creates a new <see cref="SpriteRegion"/> using the specified coordinates, width and height
+		///		Returns the <see cref="Sprite"/> at the specified index
 		/// </summary>
-		/// <returns></returns>
-		public SpriteRegion CreateRegion(int x, int y, int width, int height) => CreateRegion(new Rectangle(x, y, width, height));
-
-		/// <summary>
-		///		Returns the <see cref="SpriteRegion"/> at the specified index
-		/// </summary>
-		public SpriteRegion GetRegionByIndex(int index)
+		public Sprite GetSpriteByIndex(int index)
 		{
-			Guard.Requires(index > 0 && index <= _regions.Count, () => new IndexOutOfRangeException());
-			return _regions[index];
+			Guard.Requires(index > 0 && index <= _sprites.Count, () => new IndexOutOfRangeException());
+			return _sprites[index];
 		}
 
 		/// <summary>
-		///		Creates a new <see cref="SpriteRegion"/> using the specified boundaries
+		///		Creates a new <see cref="Sprite"/> using the specified coordinates, width and height
 		/// </summary>
-		public SpriteRegion CreateRegion(Rectangle bounds)
+		/// <returns></returns>
+		public Sprite CreateSprite(int x, int y, int width, int height) => CreateSprite(new Rectangle(x, y, width, height));
+
+		
+		/// <summary>
+		///		Creates a new <see cref="Sprite"/> using the specified boundaries
+		/// </summary>
+		public Sprite CreateSprite(Rectangle bounds)
 		{
-			var region = new SpriteRegion(Texture, bounds);
-			_regions.Add(region);
+			var region = new Sprite(Texture, bounds);
+			_sprites.Add(region);
 
 			return region;
 		}
@@ -65,12 +66,12 @@ namespace Buttonica.Core.Framework.Rendering2D.Sprites
 		/// <summary>
 		///		Returns all regions within this <see cref="SpriteSheet"/>
 		/// </summary>
-		public IEnumerable<SpriteRegion> Regions => _regions.AsReadOnly().AsEnumerable();
+		public IEnumerable<Sprite> Sprites => _sprites.AsReadOnly().AsEnumerable();
 
 		/// <summary>
 		///		Returns an enumerator that iterates through the collection.
 		/// </summary>
-		public IEnumerator<SpriteRegion> GetEnumerator() => _regions.GetEnumerator();
+		public IEnumerator<Sprite> GetEnumerator() => _sprites.GetEnumerator();
 
 		/// <summary>
 		///		Returns an enumerator that iterates through a collection.
@@ -78,18 +79,18 @@ namespace Buttonica.Core.Framework.Rendering2D.Sprites
 		IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
 		/// <summary>
-		///		Creates a new <see cref="SpriteSheet"/> from the specified <see cref="Texture2D"/>, region width, region height
+		///		Creates a new <see cref="SpriteSheet"/> from the specified <see cref="Texture2D"/>, sprite width, sprite height
 		///		and optional margin as well as spacing values
 		/// </summary>
-		public static SpriteSheet Create(Texture2D texture, int regionWidth, int regionHeight, int margin = 0, int spacing = 0)
+		public static SpriteSheet Create(Texture2D texture, int spriteWidth, int spriteHeight, int margin = 0, int spacing = 0)
 		{
 			var spriteSheet		= new SpriteSheet(texture);
 			var width			= texture.Width - margin;
 			var height			= texture.Height - margin;
 
-			for (var y = margin; y < height; y += (regionHeight + spacing)) {
-				for (var x = margin; x < width; x += (regionWidth + spacing)) {
-					spriteSheet.CreateRegion(x, y, regionWidth, regionHeight);
+			for (var y = margin; y < height; y += (spriteHeight + spacing)) {
+				for (var x = margin; x < width; x += (spriteWidth + spacing)) {
+					spriteSheet.CreateSprite(x, y, spriteWidth, spriteHeight);
 				}
 			}
 

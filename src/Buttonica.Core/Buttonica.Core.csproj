@@ -75,11 +75,12 @@
     <Compile Include="Framework\Modules\IGameModule.cs" />
     <Compile Include="Framework\Rendering2D\Entity2D.cs" />
     <Compile Include="Framework\Core\Types\RectangleF.cs" />
-    <Compile Include="Framework\Rendering2D\Sprites\Sprite.cs" />
+    <Compile Include="Framework\Rendering2D\Sprites\ISpriteProvider.cs" />
     <Compile Include="Framework\Rendering2D\Sprites\SpriteComponent.cs" />
     <Compile Include="Framework\Rendering2D\Sprites\SpriteSheet.cs" />
-    <Compile Include="Framework\Rendering2D\Sprites\SpriteRegion.cs" />
-    <Compile Include="Framework\Rendering2D\Sprites\SpriteRegionExtensions.cs" />
+    <Compile Include="Framework\Rendering2D\Sprites\Sprite.cs" />
+    <Compile Include="Framework\Rendering2D\Sprites\SpriteExtensions.cs" />
+    <Compile Include="Framework\Rendering2D\Sprites\SpriteSheetProvider.cs" />
     <Compile Include="Guard.cs" />
     <Compile Include="Logging\Configuration\LoggerBuilder.cs" />
     <Compile Include="Logging\ILogger.cs" />

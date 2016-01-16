@@ -10,24 +10,24 @@ namespace Buttonica.Core.Framework.Rendering2D.Sprites
 {
 
 	/// <summary>
-	///		Extensions for <see cref="SpriteRegion"/>
+	///		Extensions for <see cref="Sprite"/>
 	/// </summary>
-	public static class SpriteRegionExtensions
+	public static class SpriteExtensions
 	{
 
 		/// <summary>
-		///		Draws a <see cref="SpriteRegion"/> using the specified <see cref="SpriteBatch"/>
+		///		Draws a <see cref="Sprite"/> using the specified <see cref="SpriteBatch"/>
 		/// </summary>
-		public static void Draw(this SpriteBatch spriteBatch, SpriteRegion spriteRegion, Vector2 position, Color color)
+		public static void Draw(this SpriteBatch spriteBatch, Sprite spriteRegion, Vector2 position, Color color)
 		{
 			Guard.AgainstNullArgument(nameof(spriteBatch), spriteBatch);
 			spriteBatch.Draw(spriteRegion.Texture, position, spriteRegion.Bounds, color);
 		}
 
 		/// <summary>
-		///		Draws a <see cref="SpriteRegion"/> using the specified <see cref="SpriteBatch"/>
+		///		Draws a <see cref="Sprite"/> using the specified <see cref="SpriteBatch"/>
 		/// </summary>
-		public static void Draw(this SpriteBatch spriteBatch, SpriteRegion spriteRegion, Rectangle destination, Color color)
+		public static void Draw(this SpriteBatch spriteBatch, Sprite spriteRegion, Rectangle destination, Color color)
 		{
 			Guard.AgainstNullArgument(nameof(spriteBatch), spriteBatch);
 			spriteBatch.Draw(spriteRegion.Texture, destination, spriteRegion.Bounds, color);

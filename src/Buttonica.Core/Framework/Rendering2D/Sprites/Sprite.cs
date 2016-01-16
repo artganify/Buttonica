@@ -1,61 +1,74 @@
-﻿using Buttonica.Core.Framework.Core.Types;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Buttonica.Core.Framework.Rendering2D.Sprites
 {
 
 	/// <summary>
-	///		Represents a sprite within the world space, which is a 2 dimensional image or animation
+	///		Represents an individual region of a <see cref="SpriteSheet"/>
 	/// </summary>
-	public class Sprite : Entity2D
+	public class Sprite
 	{
 
-		private Texture2D _texture;
+		/// <summary>
+		///		Returns the region texture
+		/// </summary>
+		public Texture2D Texture { get; }
 
 		/// <summary>
-		///		Gets or sets the texture of the current sprite
+		///		Returns the boundaries of the region
 		/// </summary>
-		public Texture2D Texture
-		{
-			get { return _texture; }
-			set
-			{
-				_texture = value;
-				OnTextureChanged();
-			}
-		}
+		public Rectangle Bounds { get; }
 
 		/// <summary>
-		///		Creates a new <see cref="Sprite"/>
+		///		Returns the width of the region
 		/// </summary>
-		protected Sprite()
-			: base(RectangleF.Empty)
-		{
-			
-		}
+		public int Width => Bounds.Width;
 
 		/// <summary>
-		///		Creates a new <see cref="Sprite"/> with the specified <see cref="Texture2D"/> and draw area
+		///		Returns the height of the region
 		/// </summary>
-		public Sprite(Texture2D texture, RectangleF drawArea)
-			: base(drawArea)
-		{
-			_texture = texture;
-		}
+		public int Height => Bounds.Height;
 
 		/// <summary>
-		///		Creates a new <see cref="Sprite"/> with the specified <see cref="SpriteRegion"/> and draw area
+		///		Returns the X coordinate of the region
 		/// </summary>
-		public Sprite(SpriteRegion spriteRegion, RectangleF drawArea)
-			: this(spriteRegion.Texture, drawArea)
+		public int X => Bounds.X;
+
+		/// <summary>
+		///		Returns the Y coordinate of the region
+		/// </summary>
+		public int Y => Bounds.Y;
+
+		/// <summary>
+		///		Creates a new <see cref="Sprite"/> using the specified <see cref="Texture2D"/> and dimensions
+		/// </summary>
+		public Sprite(Texture2D texture, int x, int y, int width, int height)
+			: this(texture, new Rectangle(x, y, width, height))
 		{
 			
 		}
 
 		/// <summary>
-		///		Invoked when the texture of the sprite has changed
+		///		Creates a new <see cref="Sprite"/> using the specified <see cref="Texture2D"/> and 
+		///		<see cref="Rectangle">bounds</see>
 		/// </summary>
-		protected virtual void OnTextureChanged()
+		public Sprite(Texture2D texture, Rectangle bounds)
+		{
+			Bounds	= bounds;
+			Texture = texture;
+		}
+
+		/// <summary>
+		///		Creates a new <see cref="Sprite"/> using the specified <see cref="Texture2D"/>
+		/// </summary>
+		public Sprite(Texture2D texture)
+			: this(texture, 0, 0, texture.Width, texture.Height)
 		{
 			
 		}
