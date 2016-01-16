@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Buttonica.Core.Framework
+namespace Buttonica.Core.Framework.Modules
 {
 
 	/// <summary>
-	///		Represents a common behavior
+	///		Contract for a generic game module
 	/// </summary>
-	public interface IBehavior
+	public interface IGameModule : IComponent
 	{
 	}
 

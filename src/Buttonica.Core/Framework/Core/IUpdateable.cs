@@ -9,15 +9,15 @@ namespace Buttonica.Core.Framework
 {
 
 	/// <summary>
-	///		Represents a renderable type
+	///		Represents a type which supports update calls
 	/// </summary>
-	public interface IRenderableBehavior : IBehavior
+	public interface IUpdateable
 	{
 
 		/// <summary>
-		///		Invokes the render call on the current instance, specifying the main <see cref="GameTime"/>
+		///		Invokes the update routine on the instance, specifying the current <see cref="GameTime"/>
 		/// </summary>
-		void Render(GameTime gameTime);
+		void Update(GameTime gameTime);
 
 	}
 

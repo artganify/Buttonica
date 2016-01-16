@@ -8,15 +8,16 @@ using Microsoft.Xna.Framework;
 namespace Buttonica.Core.Framework
 {
 	/// <summary>
-	///		Represents an updateable type
+	///		Represents a type which supports render calls
 	/// </summary>
-	public interface IUpdateBehavior : IBehavior
+	public interface IRenderable
 	{
 
 		/// <summary>
-		///		Invokes the update call on the current instance, specifying the main <see cref="GameTime"/>
+		///		Invokes the render routine on the instance, specifying the current <see cref="GameTime"/>
 		/// </summary>
-		void Update(GameTime gameTime);
+		void Render(GameTime gameTime);
 
 	}
+
 }

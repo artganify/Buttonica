@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Buttonica.Core.Diagnostics;
 using Buttonica.Core.Logging.Internal;
 using Buttonica.Core.Logging.Targets;
 
