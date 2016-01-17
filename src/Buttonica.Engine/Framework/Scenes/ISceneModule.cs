@@ -1,4 +1,5 @@
 ﻿using System;
+using Buttonica.Engine.Framework.Core;
 using Buttonica.Engine.Framework.Modules;
 
 namespace Buttonica.Engine.Framework.Scenes
@@ -6,8 +7,9 @@ namespace Buttonica.Engine.Framework.Scenes
 	/// <summary>
 	///     Represents a game module which manages the individual states of the game in a LIFO collection
 	/// </summary>
-	public interface ISceneModule : IGameModule, IDisposable
+	public interface ISceneModule : IGameModule, IUpdateable, IRenderable, IDisposable
 	{
+
 		/// <summary>
 		///     Returns the currently active scene
 		/// </summary>
@@ -22,5 +24,6 @@ namespace Buttonica.Engine.Framework.Scenes
 		///     Exits the currently active scene and reactivates any underlying ones
 		/// </summary>
 		void Pop();
+
 	}
 }

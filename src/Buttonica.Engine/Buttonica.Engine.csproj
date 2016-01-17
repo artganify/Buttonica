@@ -74,6 +74,7 @@
     <Compile Include="Framework\Entities\IEntity.cs" />
     <Compile Include="Framework\Entities\IEntityComponent.cs" />
     <Compile Include="Framework\Modules\GameModuleBase.cs" />
+    <Compile Include="Framework\Modules\GameModuleSystem.cs" />
     <Compile Include="Framework\Modules\GraphicalModuleBase.cs" />
     <Compile Include="Framework\Modules\IGameModule.cs" />
     <Compile Include="Framework\Rendering2D\Entity2D.cs" />

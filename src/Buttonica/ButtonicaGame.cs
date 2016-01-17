@@ -1,5 +1,7 @@
-﻿using Buttonica.Engine.Framework.Scenes;
+﻿using Buttonica.Engine.Framework.Modules;
+using Buttonica.Engine.Framework.Scenes;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Buttonica
 {
@@ -7,29 +9,40 @@ namespace Buttonica
 	{
 		private readonly GraphicsDeviceManager _graphics;
 
-		private readonly ISceneModule _sceneModule;
+		// modules
+		private readonly GameModuleSystem	_gameModules	= new GameModuleSystem();
+		private readonly ISceneModule		_sceneModule	= new SceneModule();
+		
 
 		public ButtonicaGame()
 		{
-			Window.Title = "Buttonica: Realms Of Color";
-			Content.RootDirectory = "Content";
+			Window.Title			= "Buttonica: Realms Of Color";
+			Content.RootDirectory	= "Content";
 
-			_graphics = new GraphicsDeviceManager(this);
+			_graphics				= new GraphicsDeviceManager(this);
 		}
 
 		protected override void Initialize()
 		{
-			base.Initialize();
+			// TODO do we need to call initialize here?
+			//base.Initialize();
+
+			_gameModules.RegisterModule(_sceneModule);
 		}
 
 		protected override void Update(GameTime gameTime)
 		{
-			base.Update(gameTime);
+			// update game modules
+			_gameModules.Update(gameTime);
 		}
 
 		protected override void Draw(GameTime gameTime)
 		{
-			base.Draw(gameTime);
+			_graphics.GraphicsDevice.Clear(Color.Pink); // fabulous!
+
+			// render game modules
+			_gameModules.Render(gameTime);
 		}
+
 	}
 }
