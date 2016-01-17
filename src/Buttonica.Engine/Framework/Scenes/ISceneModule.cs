@@ -9,7 +9,6 @@ namespace Buttonica.Engine.Framework.Scenes
 	/// </summary>
 	public interface ISceneModule : IGameModule, IUpdateable, IRenderable, IDisposable
 	{
-
 		/// <summary>
 		///     Returns the currently active scene
 		/// </summary>
@@ -24,6 +23,5 @@ namespace Buttonica.Engine.Framework.Scenes
 		///     Exits the currently active scene and reactivates any underlying ones
 		/// </summary>
 		void Pop();
-
 	}
 }

@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Buttonica.Engine.Framework.Scenes;
+﻿using Buttonica.Engine.Framework.Scenes;
 
 namespace Buttonica.Scenes
 {
-
 	/// <summary>
-	///		Represents the title scene of the game (currently used for testing purposes)
+	///     Represents the title scene of the game (currently used for testing purposes)
 	/// </summary>
 	public class TitleScene : Scene
 	{
-
 		/// <summary>
 		///     Invoked when the scene is being activated
 		/// </summary>
@@ -45,7 +38,5 @@ namespace Buttonica.Scenes
 		{
 			base.OnUnmanagedDisposal();
 		}
-
 	}
-
 }

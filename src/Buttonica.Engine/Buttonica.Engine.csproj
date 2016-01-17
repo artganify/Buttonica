@@ -64,6 +64,7 @@
     <Compile Include="Framework\Core\Collections\EnumerableExtensions.cs" />
     <Compile Include="Framework\Core\ComponentBase.cs" />
     <Compile Include="Framework\Core\DisposableBase.cs" />
+    <Compile Include="Framework\Core\EnableableComponentBase.cs" />
     <Compile Include="Framework\Core\IContentable.cs" />
     <Compile Include="Framework\Core\IRenderable.cs" />
     <Compile Include="Framework\Core\IUpdateable.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Framework\Entities\EntityComponentBase.cs" />
     <Compile Include="Framework\Core\IComponent.cs" />
     <Compile Include="Framework\Core\IIdentifyable.cs" />
+    <Compile Include="Framework\Entities\EntityContainer.cs" />
     <Compile Include="Framework\Entities\IEntity.cs" />
     <Compile Include="Framework\Entities\IEntityComponent.cs" />
     <Compile Include="Framework\Modules\GameModuleBase.cs" />

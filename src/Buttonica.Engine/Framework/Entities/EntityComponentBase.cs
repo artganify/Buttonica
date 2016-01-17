@@ -5,7 +5,7 @@ namespace Buttonica.Engine.Framework.Entities
 	/// <summary>
 	///     Provides a base implementation of <see cref=" IEntityComponent" />
 	/// </summary>
-	public abstract class EntityComponentBase : ComponentBase, IEntityComponent
+	public abstract class EntityComponentBase : EnableableComponentBase, IEntityComponent
 	{
 		/// <summary>
 		///     Returns the owner of this component

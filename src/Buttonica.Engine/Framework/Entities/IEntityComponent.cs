@@ -7,5 +7,9 @@ namespace Buttonica.Engine.Framework.Entities
 	/// </summary>
 	public interface IEntityComponent : IComponent
 	{
+		/// <summary>
+		///     Returns whether the component is currently enabled
+		/// </summary>
+		bool IsEnabled { get; }
 	}
 }

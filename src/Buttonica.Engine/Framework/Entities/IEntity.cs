@@ -10,9 +10,13 @@ namespace Buttonica.Engine.Framework.Entities
 	public interface IEntity : IComponent, IIdentifyable
 	{
 		/// <summary>
+		///     Returns whether the entity is currently enabled
+		/// </summary>
+		bool IsEnabled { get; }
+
+		/// <summary>
 		///     Returns a list of components of this entity
 		/// </summary>
-		// TODO do we need to expose this?
-		ICollection<IEntityComponent> Components { get; }
+		IEnumerable<IEntityComponent> Components { get; }
 	}
 }

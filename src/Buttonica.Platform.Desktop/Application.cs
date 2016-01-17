@@ -6,10 +6,8 @@ namespace Buttonica.Platform.Desktop
 	{
 		private static void Main(string[] args)
 		{
-
 			using (var game = new ButtonicaGame())
 				game.Run(GameRunBehavior.Synchronous);
-
 		}
 	}
 }

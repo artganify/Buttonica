@@ -1,11 +1,9 @@
-﻿using System;
-
-namespace Buttonica.Engine.Framework.Core
+﻿namespace Buttonica.Engine.Framework.Core
 {
 	/// <summary>
 	///     Represents a type which contains content resources, such as textures, music, sprites...
 	/// </summary>
-	public interface IContentable : IDisposable
+	public interface IContentable
 	{
 		/// <summary>
 		///     Returns whether the content of the instance has been loaded

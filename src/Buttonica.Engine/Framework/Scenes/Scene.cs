@@ -1,19 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Linq;
 using Buttonica.Engine.Framework.Core;
 using Buttonica.Engine.Framework.Entities;
 using Microsoft.Xna.Framework;
+using IUpdateable = Buttonica.Engine.Framework.Core.IUpdateable;
 
 namespace Buttonica.Engine.Framework.Scenes
 {
 	/// <summary>
+	///     Represents an individual state of the game
 	/// </summary>
-	public class Scene : ComponentBase
+	public class Scene : EntityContainer, IUpdateable, IRenderable
 	{
-		/// <summary>
-		///     Returns a list of entities within the current scene
-		/// </summary>
-		public List<IEntity> Entities { get; } = new List<IEntity>();
-
 		/// <summary>
 		///     Returns whether the scene is currently active
 		/// </summary>
@@ -25,17 +23,14 @@ namespace Buttonica.Engine.Framework.Scenes
 		public bool IsPaused { get; private set; }
 
 		/// <summary>
-		///     Activates the current scene
+		///     Invokes the render routine on the instance, specifying the current <see cref="GameTime" />
 		/// </summary>
-		public void Activate()
+		public virtual void Render(GameTime gameTime)
 		{
-			if (IsActive)
+			if (!IsActive)
 				return;
 
-			IsPaused = false;
-			IsActive = true;
-
-			OnActivate();
+			OnRender(gameTime);
 		}
 
 		/// <summary>
@@ -50,14 +45,17 @@ namespace Buttonica.Engine.Framework.Scenes
 		}
 
 		/// <summary>
-		///     Invokes the render routine on the instance, specifying the current <see cref="GameTime" />
+		///     Activates the current scene
 		/// </summary>
-		public virtual void Render(GameTime gameTime)
+		public void Activate()
 		{
-			if (!IsActive)
+			if (IsActive)
 				return;
 
-			OnRender(gameTime);
+			IsPaused = false;
+			IsActive = true;
+
+			OnActivate();
 		}
 
 		/// <summary>
@@ -94,6 +92,10 @@ namespace Buttonica.Engine.Framework.Scenes
 			IsPaused = false;
 			IsActive = false;
 
+			// disable all disableable entities
+			foreach (var disableableEntity in Entities.OfType<EnableableComponentBase>())
+				disableableEntity.IsEnabled = false;
+
 			OnDeactivate();
 		}
 
@@ -104,6 +106,10 @@ namespace Buttonica.Engine.Framework.Scenes
 		protected override void OnManagedDisposal()
 		{
 			Deactivate();
+
+			// dispose all disposable entities
+			foreach (var disposableEntity in Entities.OfType<IDisposable>())
+				disposableEntity.Dispose();
 
 			base.OnManagedDisposal();
 		}
