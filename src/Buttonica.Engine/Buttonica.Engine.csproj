@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4E77BED0-F080-4BDE-9530-F3760E3518CA}</ProjectGuid>
+    <ProjectGuid>{685F0272-5971-4438-AAA2-F08BAACE66EE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Buttonica</RootNamespace>
-    <AssemblyName>Buttonica</AssemblyName>
+    <RootNamespace>Buttonica.Engine</RootNamespace>
+    <AssemblyName>Buttonica.Engine</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AssemblyBuildPath>$(Configuration)\</AssemblyBuildPath>
@@ -43,35 +43,66 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="YamlDotNet, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\YamlDotNet.3.7.0\lib\net35\YamlDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\manifest\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="ButtonicaGame.cs" />
+    <Compile Include="Configuration\IConfigurationSource.cs" />
+    <Compile Include="Configuration\YamlFileConfigurationSource.cs" />
+    <Compile Include="Framework\Core\Collections\EnumerableExtensions.cs" />
+    <Compile Include="Framework\Core\ComponentBase.cs" />
+    <Compile Include="Framework\Core\DisposableBase.cs" />
+    <Compile Include="Framework\Core\IContentable.cs" />
+    <Compile Include="Framework\Core\IRenderable.cs" />
+    <Compile Include="Framework\Core\IUpdateable.cs" />
+    <Compile Include="Framework\Entities\EntityBase.cs" />
+    <Compile Include="Framework\Entities\EntityComponentBase.cs" />
+    <Compile Include="Framework\Core\IComponent.cs" />
+    <Compile Include="Framework\Core\IIdentifyable.cs" />
+    <Compile Include="Framework\Entities\IEntity.cs" />
+    <Compile Include="Framework\Entities\IEntityComponent.cs" />
+    <Compile Include="Framework\Modules\GameModuleBase.cs" />
+    <Compile Include="Framework\Modules\GraphicalModuleBase.cs" />
+    <Compile Include="Framework\Modules\IGameModule.cs" />
+    <Compile Include="Framework\Rendering2D\Entity2D.cs" />
+    <Compile Include="Framework\Core\Types\RectangleF.cs" />
+    <Compile Include="Framework\Rendering2D\Sprites\ISpriteProvider.cs" />
+    <Compile Include="Framework\Rendering2D\Sprites\SpriteComponent.cs" />
+    <Compile Include="Framework\Rendering2D\Sprites\SpriteSheet.cs" />
+    <Compile Include="Framework\Rendering2D\Sprites\Sprite.cs" />
+    <Compile Include="Framework\Rendering2D\Sprites\SpriteExtensions.cs" />
+    <Compile Include="Framework\Rendering2D\Sprites\SpriteSheetProvider.cs" />
+    <Compile Include="Framework\Scenes\ISceneModule.cs" />
+    <Compile Include="Framework\Scenes\Scene.cs" />
+    <Compile Include="Framework\Scenes\SceneModule.cs" />
+    <Compile Include="Guard.cs" />
+    <Compile Include="Logging\Configuration\LoggerBuilder.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\Internal\Logger.cs" />
+    <Compile Include="Logging\Log.cs" />
+    <Compile Include="Logging\LogEvent.cs" />
+    <Compile Include="Logging\LogEventLevel.cs" />
+    <Compile Include="Logging\Internal\NullLogger.cs" />
+    <Compile Include="Logging\Targets\ConsoleLogTarget.cs" />
+    <Compile Include="Logging\Targets\FileLogTarget.cs" />
+    <Compile Include="Logging\Targets\ILogTarget.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Buttonica.Engine\Buttonica.Engine.csproj">
-      <Project>{685F0272-5971-4438-AAA2-F08BAACE66EE}</Project>
-      <Name>Buttonica.Engine</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-	   Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

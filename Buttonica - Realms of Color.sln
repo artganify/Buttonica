@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buttonica.Platform.Linux", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platform Targets", "Platform Targets", "{80FD5FC8-7227-4CC2-BA28-DF80AE6D06B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buttonica.Core", "src\Buttonica.Core\Buttonica.Core.csproj", "{685F0272-5971-4438-AAA2-F08BAACE66EE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buttonica.Server", "src\Buttonica.Server\Buttonica.Server.csproj", "{E547D6E6-C3A2-4F29-8B6B-98E51FEB174F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buttonica", "src\Buttonica\Buttonica.csproj", "{4E77BED0-F080-4BDE-9530-F3760E3518CA}"
@@ -37,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "manifest", "manifest", "{88
 		manifest\SharedAssemblyInfo.cs = manifest\SharedAssemblyInfo.cs
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buttonica.Engine", "src\Buttonica.Engine\Buttonica.Engine.csproj", "{685F0272-5971-4438-AAA2-F08BAACE66EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,14 +59,6 @@ Global
 		{471C86BD-BF7C-445B-AE85-EF414D8CA57E}.Release|Any CPU.ActiveCfg = Release|x86
 		{471C86BD-BF7C-445B-AE85-EF414D8CA57E}.Release|x86.ActiveCfg = Release|x86
 		{471C86BD-BF7C-445B-AE85-EF414D8CA57E}.Release|x86.Build.0 = Release|x86
-		{685F0272-5971-4438-AAA2-F08BAACE66EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{685F0272-5971-4438-AAA2-F08BAACE66EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{685F0272-5971-4438-AAA2-F08BAACE66EE}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{685F0272-5971-4438-AAA2-F08BAACE66EE}.Debug|x86.Build.0 = Debug|Any CPU
-		{685F0272-5971-4438-AAA2-F08BAACE66EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{685F0272-5971-4438-AAA2-F08BAACE66EE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{685F0272-5971-4438-AAA2-F08BAACE66EE}.Release|x86.ActiveCfg = Release|Any CPU
-		{685F0272-5971-4438-AAA2-F08BAACE66EE}.Release|x86.Build.0 = Release|Any CPU
 		{E547D6E6-C3A2-4F29-8B6B-98E51FEB174F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E547D6E6-C3A2-4F29-8B6B-98E51FEB174F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E547D6E6-C3A2-4F29-8B6B-98E51FEB174F}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -91,6 +83,14 @@ Global
 		{C81E947A-DA7A-46AA-8A73-98938F0520EB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C81E947A-DA7A-46AA-8A73-98938F0520EB}.Release|x86.ActiveCfg = Release|Any CPU
 		{C81E947A-DA7A-46AA-8A73-98938F0520EB}.Release|x86.Build.0 = Release|Any CPU
+		{685F0272-5971-4438-AAA2-F08BAACE66EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{685F0272-5971-4438-AAA2-F08BAACE66EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{685F0272-5971-4438-AAA2-F08BAACE66EE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{685F0272-5971-4438-AAA2-F08BAACE66EE}.Debug|x86.Build.0 = Debug|Any CPU
+		{685F0272-5971-4438-AAA2-F08BAACE66EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{685F0272-5971-4438-AAA2-F08BAACE66EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{685F0272-5971-4438-AAA2-F08BAACE66EE}.Release|x86.ActiveCfg = Release|Any CPU
+		{685F0272-5971-4438-AAA2-F08BAACE66EE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

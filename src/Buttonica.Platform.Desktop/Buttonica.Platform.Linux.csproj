@@ -70,10 +70,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Buttonica.Core\Buttonica.Core.csproj">
-      <Project>{685f0272-5971-4438-aaa2-f08baace66ee}</Project>
-      <Name>Buttonica.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Buttonica.Server\Buttonica.Server.csproj">
       <Project>{e547d6e6-c3a2-4f29-8b6b-98e51feb174f}</Project>
       <Name>Buttonica.Server</Name>

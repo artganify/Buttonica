@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Buttonica.Server.Dedicated
+﻿namespace Buttonica.Server.Dedicated
 {
-	class Application
+	internal class Application
 	{
-		static void Main(string[] args)
+		private static void Main(string[] args)
 		{
 		}
 	}

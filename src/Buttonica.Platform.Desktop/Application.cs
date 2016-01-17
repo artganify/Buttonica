@@ -1,8 +1,8 @@
 ﻿namespace Buttonica.Platform.Desktop
 {
-	class Application
+	internal class Application
 	{
-		static void Main(string[] args)
+		private static void Main(string[] args)
 		{
 		}
 	}
