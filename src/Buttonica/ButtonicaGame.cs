@@ -1,5 +1,5 @@
-﻿using Buttonica.Engine.Framework.Modules;
-using Buttonica.Engine.Framework.Scenes;
+﻿using Buttonica.Engine.Modules;
+using Buttonica.Engine.Scenes;
 using Microsoft.Xna.Framework;
 
 namespace Buttonica

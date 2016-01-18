@@ -61,35 +61,37 @@
     </Compile>
     <Compile Include="Configuration\IConfigurationSource.cs" />
     <Compile Include="Configuration\YamlFileConfigurationSource.cs" />
-    <Compile Include="Framework\Core\Collections\EnumerableExtensions.cs" />
-    <Compile Include="Framework\Core\ComponentBase.cs" />
-    <Compile Include="Framework\Core\DisposableBase.cs" />
-    <Compile Include="Framework\Core\EnableableComponentBase.cs" />
-    <Compile Include="Framework\Core\IContentable.cs" />
-    <Compile Include="Framework\Core\IRenderable.cs" />
-    <Compile Include="Framework\Core\IUpdateable.cs" />
-    <Compile Include="Framework\Entities\EntityBase.cs" />
-    <Compile Include="Framework\Entities\EntityComponentBase.cs" />
-    <Compile Include="Framework\Core\IComponent.cs" />
-    <Compile Include="Framework\Core\IIdentifyable.cs" />
-    <Compile Include="Framework\Entities\EntityContainer.cs" />
-    <Compile Include="Framework\Entities\IEntity.cs" />
-    <Compile Include="Framework\Entities\IEntityComponent.cs" />
-    <Compile Include="Framework\Modules\GameModuleBase.cs" />
-    <Compile Include="Framework\Modules\GameModuleSystem.cs" />
-    <Compile Include="Framework\Modules\GraphicalModuleBase.cs" />
-    <Compile Include="Framework\Modules\IGameModule.cs" />
-    <Compile Include="Framework\Rendering2D\Entity2D.cs" />
-    <Compile Include="Framework\Core\Types\RectangleF.cs" />
-    <Compile Include="Framework\Rendering2D\Sprites\ISpriteProvider.cs" />
-    <Compile Include="Framework\Rendering2D\Sprites\SpriteComponent.cs" />
-    <Compile Include="Framework\Rendering2D\Sprites\SpriteSheet.cs" />
-    <Compile Include="Framework\Rendering2D\Sprites\Sprite.cs" />
-    <Compile Include="Framework\Rendering2D\Sprites\SpriteExtensions.cs" />
-    <Compile Include="Framework\Rendering2D\Sprites\SpriteSheetProvider.cs" />
-    <Compile Include="Framework\Scenes\ISceneModule.cs" />
-    <Compile Include="Framework\Scenes\Scene.cs" />
-    <Compile Include="Framework\Scenes\SceneModule.cs" />
+    <Compile Include="Core\Collections\EnumerableExtensions.cs" />
+    <Compile Include="Core\ComponentBase.cs" />
+    <Compile Include="Core\DisposableBase.cs" />
+    <Compile Include="Core\EnableableComponentBase.cs" />
+    <Compile Include="Core\IContentable.cs" />
+    <Compile Include="Core\IRenderable.cs" />
+    <Compile Include="Core\IUpdateable.cs" />
+    <Compile Include="Entities\Behavior\EntityBehaviorBase.cs" />
+    <Compile Include="Entities\EntityBase.cs" />
+    <Compile Include="Entities\EntityComponentBase.cs" />
+    <Compile Include="Core\IComponent.cs" />
+    <Compile Include="Core\IIdentifyable.cs" />
+    <Compile Include="Entities\EntityContainer.cs" />
+    <Compile Include="Entities\IEntity.cs" />
+    <Compile Include="Entities\Behavior\IEntityBehavior.cs" />
+    <Compile Include="Entities\IEntityComponent.cs" />
+    <Compile Include="Modules\GameModuleBase.cs" />
+    <Compile Include="Modules\GameModuleSystem.cs" />
+    <Compile Include="Modules\GraphicalModuleBase.cs" />
+    <Compile Include="Modules\IGameModule.cs" />
+    <Compile Include="Graphics\Entity2D.cs" />
+    <Compile Include="Core\Types\RectangleF.cs" />
+    <Compile Include="Graphics\Sprites\ISpriteProvider.cs" />
+    <Compile Include="Graphics\Sprites\SpriteComponent.cs" />
+    <Compile Include="Graphics\Sprites\SpriteSheet.cs" />
+    <Compile Include="Graphics\Sprites\Sprite.cs" />
+    <Compile Include="Graphics\Sprites\SpriteExtensions.cs" />
+    <Compile Include="Graphics\Sprites\SpriteSheetProvider.cs" />
+    <Compile Include="Scenes\ISceneModule.cs" />
+    <Compile Include="Scenes\Scene.cs" />
+    <Compile Include="Scenes\SceneModule.cs" />
     <Compile Include="Guard.cs" />
     <Compile Include="Logging\Configuration\LoggerBuilder.cs" />
     <Compile Include="Logging\ILogger.cs" />
@@ -106,6 +108,8 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Framework\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

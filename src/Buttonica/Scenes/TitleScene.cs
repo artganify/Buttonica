@@ -1,4 +1,4 @@
-﻿using Buttonica.Engine.Framework.Scenes;
+﻿using Buttonica.Engine.Scenes;
 
 namespace Buttonica.Scenes
 {
