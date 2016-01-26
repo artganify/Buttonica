@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{606F8C40-F456-4068-B6D2-489224F1C22A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pressiah</RootNamespace>
+    <AssemblyName>Pressiah</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AssemblyBuildPath>$(Configuration)\</AssemblyBuildPath>
+    <BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>$(BaseIntermediateOutputPath)\$(AssemblyBuildPath)</IntermediateOutputPath>
+    <OutputPath>bin\$(AssemblyBuildPath)</OutputPath>
+    <DocumentationFile>$(OutputPath)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\manifest\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\util\_guard.cs">
+      <Link>Properties\_guard.cs</Link>
+    </Compile>
+    <Compile Include="Configuration\IConfigurationSource.cs" />
+    <Compile Include="Configuration\YamlFileConfigurationSource.cs" />
+    <Compile Include="Core\ComparableExtensions.cs" />
+    <Compile Include="Core\ComponentBase.cs" />
+    <Compile Include="Core\IComponent.cs" />
+    <Compile Include="Diagnostics\Logging\Configuration\LoggerBuilder.cs" />
+    <Compile Include="Diagnostics\Logging\ILogger.cs" />
+    <Compile Include="Diagnostics\Logging\Internal\Logger.cs" />
+    <Compile Include="Diagnostics\Logging\Internal\NullLogger.cs" />
+    <Compile Include="Diagnostics\Logging\Log.cs" />
+    <Compile Include="Diagnostics\Logging\LogEvent.cs" />
+    <Compile Include="Diagnostics\Logging\LogEventLevel.cs" />
+    <Compile Include="Diagnostics\Logging\Targets\ConsoleLogTarget.cs" />
+    <Compile Include="Diagnostics\Logging\Targets\FileLogTarget.cs" />
+    <Compile Include="Diagnostics\Logging\Targets\ILogTarget.cs" />
+    <Compile Include="Entities\Components\IEntityComponent.cs" />
+    <Compile Include="Entities\EntityEqualityComparer.cs" />
+    <Compile Include="Entities\IEntity.cs" />
+    <Compile Include="Entities\IEntityEqualityComparer.cs" />
+    <Compile Include="Entities\IIdentifiable.cs" />
+    <Compile Include="Entities\Priority.cs" />
+    <Compile Include="Game\IContentable.cs" />
+    <Compile Include="Game\IGameSystem.cs" />
+    <Compile Include="Game\IRenderable.cs" />
+    <Compile Include="Game\IUpdateable.cs" />
+    <Compile Include="Primitives\RectangleF.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.4.0.459, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MonoGame.Framework.WindowsGL.3.4.0.459\lib\net40\MonoGame.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MonoGame.Framework.WindowsGL.3.4.0.459\lib\net40\OpenTK.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="YamlDotNet, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Buttonica\Source\packages\YamlDotNet.3.7.0\lib\net35\YamlDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
