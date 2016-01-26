@@ -56,16 +56,9 @@
     </Compile>
     <Compile Include="ButtonicaGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scenes\TitleScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Buttonica.Engine\Buttonica.Engine.csproj">
-      <Project>{685F0272-5971-4438-AAA2-F08BAACE66EE}</Project>
-      <Name>Buttonica.Engine</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
