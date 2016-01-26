@@ -43,6 +43,9 @@
     </Compile>
     <Compile Include="Configuration\IConfigurationSource.cs" />
     <Compile Include="Configuration\YamlFileConfigurationSource.cs" />
+    <Compile Include="Core\Collections\TrackingCollection.cs" />
+    <Compile Include="Core\Collections\TrackingCollectionChangedEventArgs.cs" />
+    <Compile Include="Core\Collections\TrackingCollectionItemAddedEventArgs.cs" />
     <Compile Include="Core\ComparableExtensions.cs" />
     <Compile Include="Core\ComponentBase.cs" />
     <Compile Include="Core\IComponent.cs" />
@@ -57,6 +60,7 @@
     <Compile Include="Diagnostics\Logging\Targets\FileLogTarget.cs" />
     <Compile Include="Diagnostics\Logging\Targets\ILogTarget.cs" />
     <Compile Include="Entities\Components\IEntityComponent.cs" />
+    <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\EntityEqualityComparer.cs" />
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Entities\IEntityEqualityComparer.cs" />
