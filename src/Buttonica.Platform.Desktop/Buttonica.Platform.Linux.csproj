@@ -47,13 +47,16 @@
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
-    <None Include="OpenTK.dll.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="packages.Buttonica.Platform.Linux.config" />
-    <None Include="Tao.Sdl.dll.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Buttonica.Server\Buttonica.Server.csproj">
+      <Project>{e547d6e6-c3a2-4f29-8b6b-98e51feb174f}</Project>
+      <Name>Buttonica.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Buttonica\Buttonica.csproj">
+      <Project>{4e77bed0-f080-4bde-9530-f3760e3518ca}</Project>
+      <Name>Buttonica</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework, Version=3.4.0.459, Culture=neutral, processorArchitecture=MSIL">
@@ -70,14 +73,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Buttonica.Server\Buttonica.Server.csproj">
-      <Project>{e547d6e6-c3a2-4f29-8b6b-98e51feb174f}</Project>
-      <Name>Buttonica.Server</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Buttonica\Buttonica.csproj">
-      <Project>{4e77bed0-f080-4bde-9530-f3760e3518ca}</Project>
-      <Name>Buttonica</Name>
-    </ProjectReference>
+    <None Include="OpenTK.dll.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.Buttonica.Platform.Linux.config" />
+    <None Include="Tao.Sdl.dll.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
